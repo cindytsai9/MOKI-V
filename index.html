@@ -57,7 +57,7 @@ h2.t{font-size:clamp(1.6rem,3.6vw,2.4rem);margin-bottom:12px}
 .cap p{margin:0 0 6px}
 .cap.r{right:6%;top:12%}
 .cap.c{left:50%;top:10%;transform:translateX(-50%);text-align:center}
-.cap .logo{height:34px;width:auto;margin-top:8px}
+.cap .logo{height:34px;width:auto;aspect-ratio:auto;object-fit:contain;margin-top:8px}
 .places{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;padding:0;list-style:none}
 .places li{background:rgba(255,255,255,.75);border-radius:999px;padding:0 12px;font-size:.88rem}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch}
@@ -93,6 +93,31 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
 .steps{grid-template-columns:1fr}.step:not(:last-child)::after{content:"⌄";right:auto;left:50%;top:auto;bottom:-22px;transform:translateX(-50%)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.qgrid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.quiet p{margin:0 0 10px}
+.stage{position:relative;height:400px;border-radius:24px;overflow:hidden;background:linear-gradient(160deg,var(--surface),var(--sky-soft));border:1px solid var(--line)}
+.dot,.bub{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);border-radius:50%}
+.dot{background:#6b7785;animation:odor 6s ease-in-out infinite;animation-delay:var(--d,0s);opacity:0}
+.bub{background:radial-gradient(circle at 30% 30%,#fff,#8cc8f2 70%);opacity:0;transform:scale(0);animation:bub 6s ease-out infinite}
+.mist{position:absolute;left:-60px;top:50%;width:180px;height:180px;margin-top:-90px;border-radius:50%;background:radial-gradient(circle,rgba(110,180,236,.55),transparent 70%);transform:scale(0);animation:mist 6s ease-out infinite}
+.lab{position:absolute;left:30%;right:0;bottom:16px;text-align:center;font-family:"Noto Serif TC",serif;opacity:0;color:var(--ink);animation:lab 6s infinite}
+.l1{animation-name:l1}.l2{animation-name:l2}.l3{animation-name:l3;color:var(--sky)}
+@keyframes odor{0%{opacity:0;transform:translate(0,0) scale(1)}10%{opacity:.8}38%{opacity:.8;transform:translate(14px,-10px) scale(1)}58%{opacity:0;transform:translate(30px,0) scale(0)}100%{opacity:0;transform:scale(0)}}
+@keyframes bub{0%,45%{opacity:0;transform:scale(0)}58%{opacity:.85;transform:scale(1)}85%{opacity:.5;transform:translateY(-50px) scale(1)}100%{opacity:0;transform:translateY(-70px) scale(1)}}
+@keyframes mist{0%,35%{transform:scale(0);opacity:1}62%{transform:scale(3.2);opacity:0}100%{transform:scale(3.2);opacity:0}}
+@keyframes l1{0%,5%{opacity:0}12%,34%{opacity:1}42%,100%{opacity:0}}
+@keyframes l2{0%,36%{opacity:0}44%,56%{opacity:1}64%,100%{opacity:0}}
+@keyframes l3{0%,62%{opacity:0}72%,92%{opacity:1}100%{opacity:0}}
+@media (max-width:820px){.qgrid{grid-template-columns:1fr;gap:28px}.stage{height:330px}.stage .rig{transform:scale(1.2);left:20px}}
+@media (prefers-reduced-motion:reduce){.dot,.mist,.l1,.l2{display:none}.bub{animation:none;opacity:.7;transform:none}.l3{animation:none;opacity:1}}
+.rig{position:absolute;left:28px;bottom:18px;width:90px;height:220px;transform:scale(1.55);transform-origin:0 100%}
+.rig svg{display:block;overflow:visible}
+.rig .mist{left:76px;top:-45px;margin:0;transform-origin:0 50%}
+.head{animation:press 6s ease-in-out infinite}
+.sp{position:absolute;left:76px;top:43px;width:10px;height:10px;border-radius:50%;background:radial-gradient(circle,#fff,#8cc8f2);opacity:0;animation:spray 6s ease-out infinite;animation-delay:var(--dl)}
+@keyframes press{0%,30%{transform:none}34%,40%{transform:translateY(10px)}46%,100%{transform:none}}
+@keyframes spray{0%,34%{opacity:0;transform:translate(0,0) scale(.3)}38%{opacity:.95}56%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(2.4)}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.head{animation:none}.sp{display:none}}
 </style>
 </head>
 <body>
@@ -102,16 +127,31 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
  <p class="lead">輕輕噴一下，重新找回衣物與空間的乾淨氣息。</p>
  <p class="vvv">VAPOR • VANISH • VITAL</p>
  <ul class="chips"><li>衣物</li><li>包包</li><li>外套</li><li>帽子</li><li>沙發</li><li>車內空間</li></ul>
- <ul class="stats"><li>抑菌率 <b>90%</b> 以上</li><li>可持續 <b>24 小時</b>*</li><li>60 mL 隨身瓶</li></ul>
+ <ul class="stats"><li>抑菌率 <b>90%</b> 以上</li><li><b>Triple V</b> 植物複方</li><li>60 mL 隨身瓶</li></ul>
  <a class="btn" href="#triple">認識 Triple V action</a>
- <p class="fn">*嗅覺測試結果，針對腋下與足部異味。</p>
-</div></div></header>
+ </div></div></header>
 <main>
-<section class="quiet center"><div class="wrap">
- <h2 class="t">味道，<br>不需要再加一層味道。</h2>
- <p>MOKI.V 採用多重除味成分，透過捕捉與中和不愉悅的氣味分子，降低它們被嗅覺感受到的機會。</p>
- <p><b>沒有濃烈香氣</b>，只有更乾淨、舒服的狀態。</p>
- <p class="tag">讓空氣重新安靜。</p>
+<section class="quiet"><div class="wrap qgrid">
+ <div>
+  <h2 class="t">味道，<br>不需要再加一層味道。</h2>
+  <p>MOKI.V 採用多重除味成分，透過捕捉與中和不愉悅的氣味分子，降低它們被嗅覺感受到的機會。</p>
+  <p><b>沒有濃烈香氣</b>，只有更乾淨、舒服的狀態。</p>
+  <p class="tag">讓空氣重新安靜。</p>
+ </div>
+ <div class="stage" role="img" aria-label="動畫示意：異味分子被噴霧捕捉中和後消失，留下乾淨空氣">
+  <i class="dot" style="--x:43%;--y:22%;--s:16px;--d:0.0s"></i><i class="dot" style="--x:51%;--y:45%;--s:22px;--d:0.15s"></i><i class="dot" style="--x:46%;--y:62%;--s:14px;--d:0.3s"></i><i class="dot" style="--x:60%;--y:30%;--s:12px;--d:0.0s"></i><i class="dot" style="--x:65%;--y:54%;--s:18px;--d:0.15s"></i><i class="dot" style="--x:72%;--y:21%;--s:20px;--d:0.3s"></i><i class="dot" style="--x:76%;--y:43%;--s:14px;--d:0.0s"></i><i class="dot" style="--x:83%;--y:58%;--s:22px;--d:0.15s"></i><i class="dot" style="--x:87%;--y:28%;--s:16px;--d:0.3s"></i><i class="dot" style="--x:68%;--y:67%;--s:12px;--d:0.0s"></i><div class="rig"><i class="mist"></i>
+ <svg viewBox="0 0 90 220" width="90" height="220" aria-hidden="true">
+  <rect x="14" y="92" width="62" height="120" rx="16" fill="#fff" fill-opacity=".9" stroke="#b9d3e8" stroke-width="2"/>
+  <rect x="17" y="150" width="56" height="59" rx="13" fill="#dcecf8"/>
+  <rect x="24" y="128" width="42" height="58" rx="3" fill="#fff" stroke="#e1e8ee"/>
+  <image href="logo.png" x="27" y="138" width="36" height="10"/>
+  <rect x="27" y="156" width="36" height="1.5" fill="#c3ccd4"/><circle cx="45" cy="170" r="8" fill="#e6ebf0"/>
+  <rect x="34" y="70" width="22" height="24" fill="#fff" stroke="#b9d3e8" stroke-width="2"/>
+  <rect x="30" y="58" width="30" height="14" rx="2" fill="#f2f6fa" stroke="#b9d3e8" stroke-width="2"/>
+  <g class="head"><rect x="27" y="34" width="36" height="24" rx="4" fill="#fff" stroke="#b9d3e8" stroke-width="2"/><rect x="62" y="41" width="13" height="8" rx="2" fill="#fff" stroke="#b9d3e8" stroke-width="2"/><rect x="34" y="28" width="22" height="8" rx="3" fill="#e6eef5" stroke="#b9d3e8" stroke-width="2"/></g>
+ </svg><i class="sp" style="--dx:100px;--dy:-34px;--dl:0.0s"></i><i class="sp" style="--dx:120px;--dy:-22px;--dl:0.03s"></i><i class="sp" style="--dx:140px;--dy:-10px;--dl:0.06s"></i><i class="sp" style="--dx:155px;--dy:0px;--dl:0.09s"></i><i class="sp" style="--dx:140px;--dy:12px;--dl:0.12s"></i><i class="sp" style="--dx:120px;--dy:24px;--dl:0.15s"></i><i class="sp" style="--dx:100px;--dy:34px;--dl:0.18s"></i><i class="sp" style="--dx:165px;--dy:-18px;--dl:0.21s"></i></div><i class="bub" style="--x:43%;--y:22%;--s:22px"></i><i class="bub" style="--x:51%;--y:45%;--s:28px"></i><i class="bub" style="--x:46%;--y:62%;--s:20px"></i><i class="bub" style="--x:60%;--y:30%;--s:18px"></i><i class="bub" style="--x:65%;--y:54%;--s:24px"></i><i class="bub" style="--x:72%;--y:21%;--s:26px"></i><i class="bub" style="--x:76%;--y:43%;--s:20px"></i><i class="bub" style="--x:83%;--y:58%;--s:28px"></i><i class="bub" style="--x:87%;--y:28%;--s:22px"></i><i class="bub" style="--x:68%;--y:67%;--s:18px"></i>
+  <span class="lab l1">異味分子</span><span class="lab l2">按壓噴出．捕捉中和</span><span class="lab l3">乾淨空氣</span>
+ </div>
 </div></section>
 
 <section id="moments"><div class="wrap">
@@ -144,7 +184,7 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
 
 <section id="features"><div class="wrap">
  <h2 class="t">產品特色</h2>
- <p class="sub">微細粒子抗菌與消臭成分調配，迅速達到身體、衣物除臭／除菌的效果。</p>
+ <p class="sub">微細粒子抗菌與消臭成分調配，迅速達到衣物、環境除臭／除菌的效果。</p>
  <div class="feat">
   <div><h3>持續抗異味</h3><p>持續對抗異味及抑制細菌繁殖，一次噴灑，維持長效。</p></div>
   <div><h3>抑菌率 90% 以上</h3><p>經檢驗，有效抑制金黃色葡萄球菌、大腸桿菌、綠膿桿菌。</p></div>
@@ -174,7 +214,7 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
 
 <section id="usage"><div class="wrap">
  <h2 class="t">使用方法 ／ 3–4 下，簡單完成。</h2>
- <p class="sub">強烈惡臭的場所，約每隔 30 分鐘噴一次。吸菸後可噴於空間中，或手指與身體處。</p>
+ <p class="sub">強烈惡臭的場所，約每隔 30 分鐘噴一次。吸菸後可噴於空間中或衣物上。</p>
  <div class="steps use grid">
   <div class="step"><span class="n">01</span><h3>找到不想留下味道的地方</h3><p>衣物、布包、帽子、沙發等布質物品。</p></div>
   <div class="step"><span class="n">02</span><h3>保持適當距離</h3><p>均勻噴灑 3–4 下。</p></div>
