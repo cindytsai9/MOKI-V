@@ -118,6 +118,29 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
 @keyframes press{0%,30%{transform:none}34%,40%{transform:translateY(10px)}46%,100%{transform:none}}
 @keyframes spray{0%,34%{opacity:0;transform:translate(0,0) scale(.3)}38%{opacity:.95}56%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(2.4)}100%{opacity:0}}
 @media (prefers-reduced-motion:reduce){.head{animation:none}.sp{display:none}}
+.vis{position:relative;height:150px;border-radius:16px;margin:-6px 0 18px;overflow:hidden}
+.vis i{position:absolute;display:block}
+.v1{background:var(--sky-soft)}.v2{background:var(--amber-soft)}.v3{background:var(--leaf-soft)}
+.v1 .rg{left:50%;top:50%;width:84px;height:84px;margin:-42px;border:2px dashed var(--sky);border-radius:50%;opacity:.55;animation:spin 12s linear infinite}
+.v1 .od{left:50%;top:50%;width:12px;height:12px;margin:-6px;border-radius:50%;background:#6b7785;opacity:0;animation:v1in 4s ease-in-out infinite;animation-delay:var(--dl)}
+.v1 .core{left:50%;top:50%;width:40px;height:40px;margin:-20px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,#8cc8f2 75%);animation:core 4s ease-in-out infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes v1in{0%{opacity:0;transform:translate(var(--ox),var(--oy)) scale(1)}12%{opacity:.85}62%{opacity:.85;transform:translate(0,0) scale(.5)}76%,100%{opacity:0;transform:translate(0,0) scale(0)}}
+@keyframes core{0%,55%{transform:scale(.75)}68%{transform:scale(1.2)}85%,100%{transform:scale(.9)}}
+.v2 .cell{left:50%;bottom:16px;width:70px;height:30px;margin-left:-35px;border-radius:15px;background:#8fa88f}
+.v2 .dome{left:50%;bottom:10px;width:104px;height:62px;margin-left:-52px;border:2px solid var(--sky);border-bottom:0;border-radius:52px 52px 0 0;background:rgba(140,200,242,.3);opacity:0;transform-origin:50% 100%;animation:sh 6s ease-in-out infinite}
+.v2 .sh{position:absolute;left:50%;bottom:76px;margin-left:-22px;opacity:0;transform-origin:50% 100%;animation:sh 6s ease-in-out infinite}
+.v2 .up{bottom:44px;width:9px;height:9px;border-radius:50%;background:#6b7785;opacity:0}
+.v2 .ua{animation:ua 6s ease-in infinite}.v2 .ub{animation:ub 6s ease-in infinite}
+@keyframes ua{0%{opacity:0;transform:translateY(0)}5%{opacity:.85}12%{opacity:0;transform:translateY(-70px)}14%{opacity:0;transform:translateY(0)}19%{opacity:.85}26%{opacity:0;transform:translateY(-70px)}28%{opacity:0;transform:translateY(0)}33%{opacity:.85}40%,100%{opacity:0;transform:translateY(-70px)}}
+@keyframes ub{0%,5%{opacity:0;transform:translateY(0)}10%{opacity:.85}17%{opacity:0;transform:translateY(-70px)}19%{opacity:0;transform:translateY(0)}24%{opacity:.85}31%{opacity:0;transform:translateY(-70px)}33%{opacity:0;transform:translateY(0)}38%{opacity:.85}45%,100%{opacity:0;transform:translateY(-70px)}}
+@keyframes sh{0%,40%{opacity:0;transform:scale(.6)}50%{opacity:1;transform:scale(1.08)}58%,90%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.v3 .rp{left:50%;top:50%;width:60px;height:60px;margin:-30px;border:2px solid var(--leaf);border-radius:50%;opacity:0;animation:rp 3s ease-out infinite}
+.v3 .lf{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-size:1.5rem}
+.v3 .bt{left:50%;top:50%;width:18px;height:7px;margin:-3.5px -9px;border-radius:4px;background:#5d6a77;opacity:0;animation:bt 3s ease-in infinite;animation-delay:var(--dl)}
+@keyframes rp{0%{opacity:.7;transform:scale(.6)}100%{opacity:0;transform:scale(2.6)}}
+@keyframes bt{0%{opacity:0;transform:translate(var(--sx),var(--y)) rotate(var(--r))}15%{opacity:.85}60%{opacity:.85;transform:translate(var(--ex),var(--y)) rotate(var(--r)) scale(1)}80%,100%{opacity:0;transform:translate(var(--ex),var(--y)) rotate(var(--r)) scale(0)}}
+@media (prefers-reduced-motion:reduce){.vis i{animation:none!important}.v1 .od,.v2 .up,.v3 .bt{display:none}.v1 .core{transform:none}.v2 .sh{opacity:1}.v3 .rp{opacity:.4}}
 </style>
 </head>
 <body>
@@ -197,11 +220,11 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
  <h2 class="t">三種思路，處理同一件事：<br>不要讓味道一直留下來。</h2>
  <p class="sub">Triple V action 植物複方除臭因子，三重作用同步進行。</p>
  <div class="grid g3">
-  <article class="vv"><p class="k">Action V1</p><h3>智能捕捉</h3><p>捕捉並結合不愉悅的氣味分子，不是用香精遮蓋，降低異味被聞到。</p>
+  <article class="vv"><div class="vis v1" aria-hidden="true"><i class="rg"></i><i class="od" style="--ox:-90px;--oy:-40px;--dl:0s"></i><i class="od" style="--ox:80px;--oy:-50px;--dl:0.2s"></i><i class="od" style="--ox:-70px;--oy:45px;--dl:0.4s"></i><i class="od" style="--ox:95px;--oy:35px;--dl:0.1s"></i><i class="od" style="--ox:0px;--oy:-62px;--dl:0.3s"></i><i class="od" style="--ox:-30px;--oy:60px;--dl:0.5s"></i><i class="core"></i></div><p class="k">Action V1</p><h3>智能捕捉</h3><p>捕捉並結合不愉悅的氣味分子，不是用香精遮蓋，降低異味被聞到。</p>
    <ul><li>體味：腋下、足部的酸腐味</li><li>環境：香煙煙霧、廚房油煙</li><li>殘留：燙髮水的刺鼻化學味</li></ul></article>
-  <article class="vv"><p class="k">Action V2</p><h3>源頭抑臭</h3><p>抑制產生皮膚異味的細菌體內的酵素活性，讓異味無法產生。</p>
+  <article class="vv"><div class="vis v2" aria-hidden="true"><i class="cell"></i><i class="dome"></i><svg class="sh" viewBox="0 0 40 46" width="44" height="50"><path d="M20 2L37 8V23C37 34 29 41 20 44C11 41 3 34 3 23V8Z" fill="#cfe7fa" stroke="#2f7fc1" stroke-width="3" stroke-linejoin="round"/><path d="M12 23l6 6 11-12" fill="none" stroke="#2f7fc1" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg><i class="up ua" style="left:40%"></i><i class="up ub" style="left:48%"></i><i class="up ua" style="left:56%"></i><i class="up ub" style="left:63%"></i></div><p class="k">Action V2</p><h3>源頭抑臭</h3><p>抑制產生皮膚異味的細菌體內的酵素活性，讓異味無法產生。</p>
    <ul><li>不損害皮膚上的細菌，保護皮膚微生物群</li><li>主要針對革蘭氏陽性菌（如棒狀桿菌）</li></ul></article>
-  <article class="vv"><p class="k">Action V3</p><h3>持久抑菌</h3><p>植物萃取複合成分，兼具抗菌與收斂作用，提供持久除臭。</p>
+  <article class="vv"><div class="vis v3" aria-hidden="true"><i class="rp"></i><i class="rp" style="animation-delay:-1s"></i><i class="rp" style="animation-delay:-2s"></i><span class="lf">🌿</span><i class="bt" style="--sx:-110px;--ex:-44px;--y:-30px;--dl:0s;--r:-12deg"></i><i class="bt" style="--sx:110px;--ex:44px;--y:-20px;--dl:0.7s;--r:18deg"></i><i class="bt" style="--sx:-110px;--ex:-44px;--y:30px;--dl:1.4s;--r:-25deg"></i><i class="bt" style="--sx:110px;--ex:44px;--y:36px;--dl:2.1s;--r:10deg"></i></div><p class="k">Action V3</p><h3>持久抑菌</h3><p>植物萃取複合成分，兼具抗菌與收斂作用，提供持久除臭。</p>
    <ul><li>可抑制棒狀桿菌、金黃色葡萄球菌、糠秕馬拉色菌</li><li>臨床嗅覺測試顯示效果可持續長達 24 小時</li></ul></article>
  </div>
 </div></section>
