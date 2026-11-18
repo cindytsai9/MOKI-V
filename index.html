@@ -141,6 +141,13 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
 @keyframes rp{0%{opacity:.7;transform:scale(.6)}100%{opacity:0;transform:scale(2.6)}}
 @keyframes bt{0%{opacity:0;transform:translate(var(--sx),var(--y)) rotate(var(--r))}15%{opacity:.85}60%{opacity:.85;transform:translate(var(--ex),var(--y)) rotate(var(--r)) scale(1)}80%,100%{opacity:0;transform:translate(var(--ex),var(--y)) rotate(var(--r)) scale(0)}}
 @media (prefers-reduced-motion:reduce){.vis i{animation:none!important}.v1 .od,.v2 .up,.v3 .bt{display:none}.v1 .core{transform:none}.v2 .sh{opacity:1}.v3 .rp{opacity:.4}}
+.card img.ph{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.pets{display:block;width:100%;height:auto;border-radius:24px}
+.band.pets img{aspect-ratio:16/9}
+.cap.tl{left:5%;top:6%;max-width:40%}
+.cap.bl{left:5%;bottom:6%;max-width:none}
+.cap .fr li{background:rgba(255,255,255,.85);color:#16324a;padding:6px 14px;font-size:.9rem}
+@media (max-width:820px){.cap.tl,.cap.bl{max-width:none}.cap.bl{padding-top:0}.cap .fr li{background:var(--leaf-soft);color:var(--ink)}}
 </style>
 </head>
 <body>
@@ -181,11 +188,11 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
  <h2 class="t">想到，就噴一下。</h2>
  <p class="sub">各種日常情境，隨手整理不想留下的氣味。</p>
  <div class="grid g5">
-  <div class="card"><div class="ph">🍖</div><div class="in"><h3>燒肉之後</h3><p>外套、上衣不再留下烤肉味。</p></div></div>
-  <div class="card"><div class="ph">🍲</div><div class="in"><h3>吃完火鍋</h3><p>回到辦公室或下一個行程前，簡單整理。</p></div></div>
-  <div class="card"><div class="ph">🏋️</div><div class="in"><h3>運動之後</h3><p>運動服、外套、帽子，還沒辦法立刻清洗。</p></div></div>
-  <div class="card"><div class="ph">🚬</div><div class="in"><h3>煙味環境</h3><p>聚會、戶外、二手煙，衣物不想一直留下味道。</p></div></div>
-  <div class="card"><div class="ph">👜</div><div class="in"><h3>一整天在外面</h3><p>外套、布包、帽子，各種日常生活氣味。</p></div></div>
+  <div class="card"><img class="ph" src="s-bbq.jpg" alt="燒肉烤網與蒸氣" loading="lazy"><div class="in"><h3>燒肉之後</h3><p>外套、上衣不再留下烤肉味。</p></div></div>
+  <div class="card"><img class="ph" src="s-hotpot.jpg" alt="鴛鴦火鍋與火鍋料" loading="lazy"><div class="in"><h3>吃完火鍋</h3><p>回到辦公室或下一個行程前，簡單整理。</p></div></div>
+  <div class="card"><img class="ph" src="s-gym.jpg" alt="傍晚在跑道慢跑的女性" loading="lazy"><div class="in"><h3>運動之後</h3><p>運動服、外套、帽子，還沒辦法立刻清洗。</p></div></div>
+  <div class="card"><img class="ph" src="s-smoke.jpg" alt="手持香菸與煙霧" loading="lazy"><div class="in"><h3>煙味環境</h3><p>聚會、戶外、二手煙，衣物不想一直留下味道。</p></div></div>
+  <div class="card"><img class="ph" src="s-out.jpg" alt="手提包與外出通勤的女性" loading="lazy"><div class="in"><h3>一整天在外面</h3><p>外套、布包、帽子，各種日常生活氣味。</p></div></div>
  </div>
 </div></section>
 
@@ -229,11 +236,10 @@ section{padding:56px 0}.band img{aspect-ratio:16/9}
  </div>
 </div></section>
 
-<section><div class="wrap">
- <h2 class="t">友善的選擇，<br>給每個生活夥伴。</h2>
- <p class="sub">日常使用也能安心。</p>
- <ul class="fr"><li>🌿 植物來源成分</li><li>🐾 寵物共居友善考量</li><li>🤍 溫和配方，日常安心</li></ul>
-</div></section>
+<figure class="band pets"><img src="pets-bg.jpg" alt="躺在白色毯子上的臘腸犬與虎斑貓與水氣泡、植物" loading="lazy">
+ <figcaption class="cap tl"><h2>友善的選擇，<br>給每個生活夥伴。</h2><p>日常使用也能安心。</p></figcaption>
+ <figcaption class="cap bl"><ul class="fr"><li>🌿 植物來源成分</li><li>🐾 寵物共居友善考量</li><li>🤍 溫和配方，日常安心</li></ul></figcaption>
+</figure>
 
 <section id="usage"><div class="wrap">
  <h2 class="t">使用方法 ／ 3–4 下，簡單完成。</h2>
